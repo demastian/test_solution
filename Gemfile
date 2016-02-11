@@ -43,6 +43,8 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
   gem 'factory_girl_rails', '~> 4.6'
   gem 'rspec-rails', '~> 3.0'
+  # The Temping gem is for testing concerns that are included into ActiveRecord classes
+  gem 'temping', '~> 3.3'
 end
 
 group :development do
