@@ -23,6 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use carrierwave to manage file uploads
+gem 'carrierwave', '~> 0.10.0'
+# Use fog to save uploaded files in AWS
+gem 'fog', '~> 1.37'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
