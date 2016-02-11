@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is the solution for the following problem:
 
-Things you may want to cover:
+´´´
+Build a small uploader service module able to upload a file into S3 using Ruby on Rails.
+Use Rails 4 and ruby 2.1
+Validate using a different modules and including them it into the main one.
+Use active record transactions to ensure the actions don’t succeed unless the file upload succeeds and is displayable.
+Register the result in a Upload scaffolded resource
 
-* Ruby version
+Approach this problem as if it is an application going to production. We don't expect it to be perfect (no production code is), but we also don't want you to hack together a throw-away script. This should be representative of something that you would be comfortable releasing to a production environment.
 
-* System dependencies
+Also, spend whatever amount of time you think is reasonable. You may use whatever gems, frameworks and tools that you think are appropriate, just provide any special setup instructions when you submit your solution.
 
-* Configuration
+We are looking for you to demonstrate your knowledge related to common software practices to include reusability, portability and encapsulation - to name a few.
+´´´
 
-* Database creation
+To upload files to S3, this project relies on the Carrierwave and the Fog gems.
+In order to make it work, the following environment variables have to be set:
+* AWS_ACCESS_KEY_ID
+* AWS_SECRET_ACCESS_KEY
+* AWS_S3_REGION (Optional, defaults to 'us-east-1')
 
-* Database initialization
+It contains a model named Upload which holds all the uploaded files.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To include uploads into any model, you need follow these steps:
+1. Include the ´Uploadable conern´
+2. Call the ´has_file´ method with the attribute which is going to hold the file (i.e has_file :avatar). This method can be called multiple times.
