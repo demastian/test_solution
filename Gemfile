@@ -40,6 +40,9 @@ gem 'fog', '~> 1.37'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
+  gem 'factory_girl_rails', '~> 4.6'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
